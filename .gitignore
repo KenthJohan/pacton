@@ -1,3 +1,4 @@
 *.exe
 *.pro.user
 *.cmake
+build*
