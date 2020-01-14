@@ -1,0 +1,5 @@
+  
+
+  Command   		 Value			  		 33   123 -11
+  interval     500
+    MENUNR     1   -1 2 -3 4
