@@ -26,12 +26,10 @@ enum csc_gval_flags
 
 struct csc_gval
 {
-	uint8_t flags; //Not used
-	uint8_t type; //Type of the value
-	uint8_t pad1; //Padding to stop the warning
-	uint8_t pad2; //Padding to stop the warning
-	uint32_t pad3; //Padding to stop the warning
 	char * pos; //Location of the value
+	uint32_t flags; //Not used
+	uint32_t type; //Type of the value
+	struct csc_dlist list;
 	union
 	{
 		intmax_t val_imax;
@@ -187,7 +185,7 @@ int main (int argc, char * argv [])
 
 
 	code = csc_malloc_file ("../pacton/script2.txt");
-	struct csc_gval r [10] = {0};
+	struct csc_gval r [10] = {{0}};
 	parse (NULL, r, countof (r), code);
 	free (code);
 
